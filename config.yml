@@ -1,0 +1,156 @@
+initial:
+  -
+    parameter: health
+    value: 80
+  -
+    parameter: happiness
+    value: 50
+  -
+    parameter: fatigue
+    value: 3
+  -
+    parameter: money
+    value: 1500
+actions:
+  -
+    name: work
+    description: Go to work
+    effects:
+      -
+        parameter: happiness
+        value: -5
+      -
+        parameter: mana
+        value: -30
+      -
+        parameter: money
+        value: +100
+      -
+        parameter: fatigue
+        value: +70
+    condition:
+      -
+        parameter: mana
+        operator: '<'
+        value: 50
+      -
+        parameter: fatigue
+        operator: '<'
+        value: 10
+  -
+    name: nature
+    description: Enjoy nature
+    effects:
+      -
+        parameter: happiness
+        value: +1
+      -
+        parameter: mana
+        value: -10
+      -
+        parameter: fatigue
+        value: +10
+  -
+    name: wine and series
+    description: Drink wine and watch the series
+    effects:
+      -
+        parameter: health
+        value: -5
+      -
+        parameter: happiness
+        value: -1
+      -
+        parameter: mana
+        value: +30
+      -
+        parameter: money
+        value: -20
+      -
+        parameter: fatigue
+        value: +10
+  -
+    name: drink
+    description: Go to pub
+    effects:
+      -
+        parameter: health
+        value: -10
+      -
+        parameter: mana
+        value: +60
+      -
+        parameter: happiness
+        value: +1
+      -
+        parameter: money
+        value: -100
+      -
+        parameter: fatigue
+        value: +40
+  -
+    name: drink up
+    description: Drink with marginalized personalities
+    effects:
+      -
+        parameter: health
+        value: -80
+      -
+        parameter: happiness
+        value: +5
+      -
+        parameter: mana
+        value: +90
+      -
+        parameter: money
+        value: -150
+      -
+        parameter: fatigue
+        value: +80
+  -
+    name: sing
+    description: Sing on the subway
+    effects:
+      -
+        parameter: happiness
+        value: +1
+      -
+        parameter: mana
+        value: +10
+      -
+        parameter: money
+        value: +10
+      -
+        parameter: fatigue
+        value: +20
+  -
+    name: sleep
+    description: Sleep
+    effects:
+      -
+        parameter: mana
+        value: -50
+      -
+        parameter: fatigue
+        value: -70  
+    additional_cond:
+      -
+        condition:
+          -
+            parameter: mana
+            operator: '<'
+            value: 30
+        effects:
+          -
+            parameter: health
+            value: +90
+      -
+        condition:
+          -
+            parameter: mana
+            operator: '>'
+            value: 70
+        effects:
+          -
+            parameter: happiness
+            value: -3
