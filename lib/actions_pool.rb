@@ -6,6 +6,6 @@ class ActionsPool
   end
 
   def avaliable_actions(character)
-    @actions.select { |key, value| value.valid?(character) }
+    @actions.select { |_key, value| value.valid?(character) }
   end
 end
